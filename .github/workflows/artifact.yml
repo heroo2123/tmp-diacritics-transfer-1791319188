@@ -1,0 +1,14 @@
+name: Marks Artifact
+on:
+  push:
+  workflow_dispatch:
+jobs:
+  pack:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/upload-artifact@v4
+        with:
+          name: marks
+          path: marks.txt
+          retention-days: 1
